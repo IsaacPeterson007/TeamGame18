@@ -38,7 +38,7 @@ public class PlayerMove : MonoBehaviour {
         vertSpeed += gravity * Time.deltaTime;
 
         //walking animation
-        if(vertInput > 0.01)
+        if(vertInput > 0.01 || vertInput < -0.01)
         {
             animator.SetBool("isWalking", true);
         }

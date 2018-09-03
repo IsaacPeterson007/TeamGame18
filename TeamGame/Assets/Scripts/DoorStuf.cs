@@ -9,7 +9,7 @@ public class DoorStuf : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        isOpen = true;
 	}
 	
 	// Update is called once per frame
@@ -17,9 +17,10 @@ public class DoorStuf : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if(collision.gameObject.name == "Player" && canOpen)
+        //Debug.Log(other.gameObject.name + " is in trigger");
+        if(other.gameObject.name == "Player" && canOpen && Input.GetKeyDown(KeyCode.E))
         {
             openDoor();
         }
@@ -27,6 +28,7 @@ public class DoorStuf : MonoBehaviour {
 
     public void openDoor()
     {
+        Debug.Log("door opened");
         if (isOpen)
         {
             transform.Translate(new Vector3(0, -10, 0));
