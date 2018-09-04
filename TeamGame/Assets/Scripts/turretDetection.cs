@@ -8,7 +8,7 @@ public class turretDetection : MonoBehaviour {
     {
         if (other.gameObject.name == "Player")
         {
-            //Make sure you know that the turret is on somehow!!
+            //Make sure you know that the turret is on somehow!! 
             Debug.Log("You have been found!!");
         }
     }

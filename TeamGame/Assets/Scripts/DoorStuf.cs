@@ -20,7 +20,7 @@ public class DoorStuf : MonoBehaviour {
     private void OnTriggerStay(Collider other)
     {
         //Debug.Log(other.gameObject.name + " is in trigger");
-        if(other.gameObject.name == "Player" && canOpen && Input.GetKeyDown(KeyCode.E))
+        if(other.gameObject.name == "Player" && Input.GetKeyDown(KeyCode.E))
         {
             openDoor();
         }
@@ -40,4 +40,6 @@ public class DoorStuf : MonoBehaviour {
             isOpen = true;
         }
     }
+
+    //&& canOpen && Input.GetKeyDown(KeyCode.E)
 }

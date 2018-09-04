@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
+    public float sprintSpeed = 15;
     public float ForwardSpeed = 10;
     public float LRSpeed = 5;
     public float gravity = -8f;
@@ -46,6 +47,14 @@ public class PlayerMove : MonoBehaviour {
         {
             animator.SetBool("isWalking", false);
         }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            vertInput = Input.GetAxis("Vertical") * sprintSpeed * Time.deltaTime;
+            animator.speed = 1.5f;
+        }
+        else
+            animator.speed = 1f;
 
         movement = new Vector3(horInput, vertSpeed, vertInput);
         movement = transform.TransformDirection(movement);

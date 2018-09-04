@@ -9,17 +9,10 @@ public class MouseLook : MonoBehaviour {
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject head;
-    //[SerializeField] private Vector3 offset;
-    //[SerializeField] private Camera maincamera;
 
     public float top = -60;
     public float bottom = 60;
     private float rot;
-
-	// Use this for initialization
-	void Start () {
-        
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -36,5 +29,6 @@ public class MouseLook : MonoBehaviour {
         rot += -yInput * Time.deltaTime * ySensitivity;
         rot = Mathf.Clamp(rot, top, bottom);
         head.transform.localEulerAngles = new Vector3(rot, 0, 0);
+
     }
 }
